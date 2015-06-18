@@ -110,7 +110,7 @@ add_library(decaying_obstacle_layer
 
 ## Specify libraries to link a library or executable target against
  target_link_libraries(decaying_obstacle_layer
-    ${catkin_LIBRARIES} layers
+    ${catkin_LIBRARIES} 
  )
 
 #############
