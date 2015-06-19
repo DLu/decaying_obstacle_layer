@@ -11,6 +11,7 @@
                     points:
                         clearing: true
                     track_unknown_space: true
+                    decay_time: 15.0
                 origin_x: -2.0
                 origin_y: -2.0
                 publish_frequency: 2.0

@@ -42,6 +42,7 @@ public:
 private:
   std::priority_queue<TimeCoord, std::vector<TimeCoord>, Compare > pq;
   std::map<int, ros::Time> status_map;
+  ros::Duration timeout;
   
 };
 }

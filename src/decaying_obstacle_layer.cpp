@@ -14,6 +14,9 @@ void DecayingObstacleLayer::onInitialize()
 {
   ObstacleLayer::onInitialize();
   ros::NodeHandle nh("~/" + name_);
+  double decay_time;
+  nh.param("decay_time", decay_time, 5.0);
+  timeout = ros::Duration(decay_time);
   current_ = true;
 }
 
@@ -99,8 +102,7 @@ void DecayingObstacleLayer::updateBounds(double robot_x, double robot_y, double 
     }
   }
   
-  ros::Duration d(5);
-  while( pq.size()>0 && pq.top().time + d < tc.time ){
+  while( pq.size()>0 && pq.top().time + timeout < tc.time ){
       TimeCoord x = pq.top();
       pq.pop();
       int index = x.coord;
