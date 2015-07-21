@@ -112,7 +112,7 @@ void DecayingObstacleLayer::updateBounds(double robot_x, double robot_y, double 
       }
   }
 
-  footprint_layer_.updateBounds(robot_x, robot_y, robot_yaw, min_x, min_y, max_x, max_y);
+  updateFootprint(robot_x, robot_y, robot_yaw, min_x, min_y, max_x, max_y);
 }
 
 } // end namespace
